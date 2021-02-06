@@ -2,21 +2,21 @@ users = {}
 status = ""
  
 def displayMenu():
-    status = input("Are you registered user? y/n? Press q to quit: ")
-    if status == "y":
+    status = input("Do you want to register or login? Press q to quit: ")
+    if status == "login" or status=='Login':
         oldUser()
-    elif status == "n":
+    elif status == "Register" or status=='register':
         newUser()
  
 def newUser():
-    createLogin = input("Create login name: ")
+    Login_name = input("Create login name: ")
  
-    if createLogin in users:
+    if Login_name in users:
         print("Login name already exist!\n")
     else:
         password = input("Create password: ")
         users[createLogin] = password
-        print("\nUser created\n")
+        print("User created\n")
  
 def oldUser():
     login = input("Enter login name: ")
