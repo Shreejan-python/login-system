@@ -1,4 +1,5 @@
-users = {}
+users = []
+passwords = []
 status = ""
  
 def displayMenu():
@@ -15,17 +16,21 @@ def newUser():
         print("Login name already exist!\n")
     else:
         password = input("Create password: ")
-        users[createLogin] = password
-        print("User created\n")
+        users.append(Login_name)
+        print(users)
+        passwords.append(password)
  
 def oldUser():
     login = input("Enter login name: ")
-    passw_ = input("Enter password: ")
+    
  
-    if login in users and users[login] == passw_:
-        print("\nLogin successful!\n")
+    if login in users:
+        print(f"\nUsername {login} exists, so you need to enter your password\n")
+        passw_ = input("Enter password: ")
+        if passw_ in passwords:
+            print("\n Successfully login\n")
     else:
-        print("\nUser doesn't exist or wrong password!\n")
+        print("\nUser doesn't exists\n")
  
 while status != "q":
     displayMenu()
